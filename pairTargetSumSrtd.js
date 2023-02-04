@@ -19,6 +19,8 @@ const pairTargetNaive = (arr, target) => {
 
 console.log( pairTargetNaive( [2, 4, 9, 11, 16, 20], 31) )
 
+
+// only works on sorted, O(n)
 const pairTargetBinSearch = (arr, target) => {
   let leftPtr = 0, rightPtr = arr.length - 1
   while ( leftPtr < rightPtr ) {

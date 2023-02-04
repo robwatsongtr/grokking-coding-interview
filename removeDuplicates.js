@@ -18,14 +18,17 @@ we move it next to the last non-duplicate number we've seen.
 const removeDuplicates = (arr) => {
   // index of the next non-duplicate element
   let nextNonDup = 1;
-  let i = 0;
-  while (i < arr.length) {
-    console.log(`arr: ${arr}, arr[i]: ${arr[i]}, arr[nextNonDup]: ${arr[nextNonDup]}`)
-    if (arr[nextNonDup - 1] !== arr[i]) {
-      arr[nextNonDup] = arr[i];
+  let n = 0;
+  while (n < arr.length) {
+    console.log(`arr: ${arr}, arr[n]: ${arr[n]}, arr[nextNonDup]: ${arr[nextNonDup]}`)
+    // If one before nextNonDup is different than next, 
+    // copy over next to nextNonDup, and increment nextNonDu 
+    // otherwise just increment next 
+    if (arr[nextNonDup - 1] !== arr[n]) {
+      arr[nextNonDup] = arr[n];
       nextNonDup++;
     }
-    i++;
+    n++;
   }
   return nextNonDup;
 }
