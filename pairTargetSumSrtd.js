@@ -4,6 +4,8 @@ of elements that fulfill certain constraints, the Two Pointers approach becomes 
 
 The set of elements could be a pair, a triplet or even a subarray.
 
+This is an example of Binary Search
+
 */
 
 // works for unsorted or sorted, O(n2)
@@ -20,7 +22,7 @@ const pairTargetNaive = (arr, target) => {
 console.log( pairTargetNaive( [2, 4, 9, 11, 16, 20], 31) )
 
 
-// only works on sorted, O(n)
+// only works on sorted, O(n) 
 const pairTargetBinSearch = (arr, target) => {
   let leftPtr = 0, rightPtr = arr.length - 1
   while ( leftPtr < rightPtr ) {

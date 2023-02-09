@@ -6,46 +6,37 @@ The catch is that there can be negative numbers.
 
 Algorithm: 
 
-Find the first index of the first non-negative number.
+Use two pointers starting at both ends of the array.
 
-Define two pointers to iterate the array
+At each iteration, whichever pointer gives the bigger square,
+we will add that pointer to the result array, then move to
+the next/previous poitner.
 
-  First Pointer will move forward to iterate the non negative numbers
-  Second Poitner will move backwards to iterate the negative numbers
-
-  At every step/iteration, the square of the first pointer will be
-  compared to the square of the second number, and whichever number is 
-  bigger will be added to the output array. 
 
 
 */
 
 const squareSortedArr = (arr) => {
-  let outputArray = []
-  let firstNonNegNumIdx = 0
+  let resultArray = []
+  let lptr = 0
+  let rptr = arr.length - 1
 
-  // iterate to find the index of the first non negative number 
-  for( let i = 0; i < arr.length; i++ ) {
-    if( arr[i] < 0 ) firstNonNegNumIdx++
+  while( lptr <= rptr) {
+    console.log(resultArray)
+    let leftSqr = arr[lptr] * arr[lptr]
+    let rightSqr = arr[rptr] * arr[rptr]
+
+    if( Math.max(leftSqr) > Math.max(rightSqr) ) {
+      resultArray.unshift(leftSqr) 
+      lptr++
+    } else {
+      resultArray.unshift(rightSqr)
+      rptr--
+    }
+
   }
-
-  // define two pointers starting at the index of the first non negative number
-  let leftPtr = firstNonNegNumIdx
-  let rightPtr = firstNonNegNumIdx
-
-  console.log(`leftPtr ${leftPtr}`, `rightPtr ${rightPtr}`)
-
-  while( rightPtr !== arr.length && leftPtr !== 0) {
-    let sqrLeftPtr = arr[leftPtr] * arr[leftPtr]
-    let sqrRightPtr = arr[rightPtr] * arr[rightPtr]
-
-    outputArray.push(Math.max(sqrLeftPtr,sqrRightPtr))
-
-    rightPtr++
-    leftPtr--
-  }
-
-  return outputArray
+ 
+  return resultArray
 
 } 
 
