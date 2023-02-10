@@ -1,11 +1,9 @@
 /*
-In problems where we deal with SORTED arrays (or LinkedLists) and need to find a set 
-of elements that fulfill certain constraints, the Two Pointers approach becomes quite useful.
+Given an array of sorted numbers and a target sum, find a pair in the array whose sum 
+is equal to the given target.
 
-The set of elements could be a pair, a triplet or even a subarray.
-
-This is an example of Binary Search
-
+Write a function to return the indices of the two numbers (i.e. the pair) such 
+that they add up to the given target.
 */
 
 // works for unsorted or sorted, O(n2)
@@ -24,7 +22,9 @@ console.log( pairTargetNaive( [2, 4, 9, 11, 16, 20], 31) )
 
 // only works on sorted, O(n) 
 const pairTargetBinSearch = (arr, target) => {
-  let leftPtr = 0, rightPtr = arr.length - 1
+  let leftPtr = 0
+  let rightPtr = arr.length - 1
+  
   while ( leftPtr < rightPtr ) {
     currentSum = arr[leftPtr] + arr[rightPtr] 
     if(currentSum < target) leftPtr++
