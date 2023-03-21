@@ -21,7 +21,7 @@ console.log( pairTargetNaive( [2, 4, 9, 11, 16, 20], 31) )
 
 
 // only works on sorted, O(n) 
-const pairTargetBinSearch = (arr, target) => {
+const pairTargetSum = (arr, target) => {
   let leftPtr = 0
   let rightPtr = arr.length - 1
   
@@ -34,4 +34,4 @@ const pairTargetBinSearch = (arr, target) => {
   return [-1,-1]
 }
 
-console.log( pairTargetBinSearch( [2, 4, 9, 11, 16, 20], 31) )
+console.log( pairTargetSum( [2, 4, 9, 11, 16, 20], 31) )
