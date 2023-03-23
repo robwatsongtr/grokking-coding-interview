@@ -40,7 +40,7 @@ class Solution {
     }
 
     // return true if all 26 charaters of alphabet are prestent 
-    if(onlyAlpha.length == 26) return true 
+    if(onlyAlpha.length === 26) return true 
 
     return false;
   }
