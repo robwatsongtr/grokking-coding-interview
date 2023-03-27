@@ -24,6 +24,8 @@ const countAndReturnDuplicates = (str) => {
     countMap[letter] = (countMap[letter] || 0) + 1
   }
 
+  console.log(countMap)
+
   // Return the letters that are greater than count of 1 and how many of them there are
   // by deleting all the letters that only appear once 
   for( let key in countMap ) {
@@ -37,5 +39,7 @@ const countAndReturnDuplicates = (str) => {
 
 
 console.log( countAndReturnDuplicates('ab cd ee fa g') )
+
+
 
 
