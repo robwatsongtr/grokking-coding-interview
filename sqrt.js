@@ -8,6 +8,7 @@ Approach: Binary Seacrh
 
 The reason behind using binary search is that the square of any number ‘N’
 increases if we increase the value of ‘N’ and decreases if we decrease the value of ‘N’.
+In other words square root is a monotonic function. 
 
 1. start with two pointers, left and right, pointing to 
   the lover and upper bounds of the range in which the square root 
@@ -36,7 +37,9 @@ var mySqrt = function(x) {
    let sqrt = mid * mid // lets start with the square of the pivot/midpoint
 
    if( sqrt > x ) rptr = mid -1
+
    else if ( sqrt < x ) lptr = mid + 1
+
    else return mid 
 
   }
