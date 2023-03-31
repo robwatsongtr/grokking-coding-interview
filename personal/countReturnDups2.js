@@ -29,7 +29,7 @@ function duplicateCount(string){
     countMap[letter] = ( countMap[letter] || 0) + 1
   }
   
-  // total up the dups
+  // total up the dups FOR IN for OBJECT
   let dupChars = 0 
   for( let key in countMap) {
     if( countMap[key] > 1) {
