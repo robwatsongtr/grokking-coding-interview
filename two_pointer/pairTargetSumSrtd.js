@@ -17,7 +17,7 @@ const pairTargetNaive = (arr, target) => {
   return null 
 }
 
-console.log( pairTargetNaive( [2, 4, 9, 11, 16, 20], 31) )
+// console.log( pairTargetNaive( [2, 4, 9, 11, 16, 20], 31) )
 
 
 // only works on sorted, O(n) 
@@ -34,4 +34,25 @@ const pairTargetSum = (arr, target) => {
   return [-1,-1]
 }
 
-console.log( pairTargetSum( [2, 4, 9, 11, 16, 20], 31) )
+// console.log( pairTargetSum( [2, 4, 9, 11, 16, 20], 31) )
+
+
+
+const pairTargetSum2 = (arr, target) => {
+  let i = 0
+  let j = arr.length - 1
+
+  while ( i < j ) {
+    currentSum = arr[i] + arr[j]
+    if(currentSum < target) {
+      i++
+    } else if ( currentSum > target) {
+      j--
+    } else {
+      return [ i, j]
+    }
+  }
+  return [-1, -1];
+}
+
+console.log( pairTargetSum2( [2, 4, 9, 11, 16, 20], 32) )
